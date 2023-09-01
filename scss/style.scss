@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import "./common/reset";
+@import "./common/header";
+@import "./Sub/SubStyle";
+
+
+.txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    opacity: 1;
+    h2{
+        display: inline-block;
+        font: bold 50px "Great Vibes";
+        color: black;
+        opacity: 1;  
+    } 
+    p{
+        font: normal 22px "Dancing Script";
+    }
+}
+
+.wrap{
+    width: 100%;
+    background-color: #eee;
+    position: relative;
+
+    .content_all{
+        width: 100%;
+        padding-top: 80px;
+        .back{
+            .backAll{
+                width: 100%;
+                height: calc(100vh / 1.5);
+                text-align: center;
+
+                article{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    padding: 50px;
+                    justify-content: space-evenly;
+                    transition: 1s;
+
+                    .pic{
+                        width: 40%;
+                        height: 100%;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    
+                }
+            }
+            .back1{
+                
+                article.art1,article.art3{
+                    text-align: right;
+                    justify-content: space-evenly;
+                    background-color: rgba(#c1efff,0.4);
+                    transform: translateX(-100%);
+                    opacity: 1;
+                }
+                &.on{
+                    article{
+                        transform: translateX(0%);
+                        opacity: 1;
+                    }
+                }
+            }
+            .back2{
+                // article.art2{
+                //     text-align: right;
+                //     justify-content: space-evenly;
+                //     background-color: rgba(#c1efff,0.4);
+                //     transform: translateX(0%);
+                //     opacity: 1;
+                // }
+                // article.art4{
+                //     text-align: right;
+                //     justify-content: space-evenly;
+                //     background-color: rgba(#c1efff,0.4);
+                //     transform: translateX(0%);
+                //     opacity: 1;
+                // }
+                article.art2,
+                article.art4{
+                    text-align: left;
+                    justify-content: space-evenly;
+                    background-color: rgba(#ffdba4,0.4);
+                    transform: translateX(200%);
+                    opacity: 0;
+                }
+                &.on{
+                    article{
+                        transform: translateX(0%);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .front{
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            .inner{
+                width: 100%;
+                height: 100%;
+                opacity: 0.2;
+                position: relative;
+                background-color: rgba(#FCC9C1,0.7);
+
+                .pic{
+                    width: 50%;
+                    height: 50%;
+                    transform: scale(1);
+                    position: absolute;
+                    top: 100%;
+                    left: 25%;
+                    transition: 1s;
+                    
+                
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &.on{
+                    .pic{
+                        top: 30%;
+                        transform: scale(1.5);
+                    }
+                }
+                &.off{
+                    .pic{
+                        top: -100%;
+                        transform: scale(0);
+                    }
+                }
+            }
+        }
+    }
+}

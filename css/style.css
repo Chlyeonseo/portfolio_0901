@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li, ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #ffe9ae;
+  z-index: 10;
+}
+header .nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav ul {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+}
+header .nav .logo p {
+  font: bold 60px/1 "Dancing Script";
+}
+
+#visual {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+#visual .panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#visual .panel li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 150px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+}
+#visual .panel li.on {
+  opacity: 1;
+  z-index: 2;
+}
+#visual .panel li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#visual .panel li:nth-of-type(1) {
+  background-image: url(../img/DenTown2.jpg);
+}
+#visual .panel li:nth-of-type(2) {
+  background-image: url(../img/DenTown3.jpg);
+}
+#visual .panel li:nth-of-type(3) {
+  background-image: url(../img/DenHome2.jpg);
+}
+#visual .panel li:nth-of-type(4) {
+  background-image: url(../img/DenHome.jpg);
+}
+#visual .panel li h2 {
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+#visual nav {
+  position: absolute;
+  z-index: 3;
+  bottom: 9vh;
+  right: 10vw;
+  display: flex;
+  gap: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+#visual nav i {
+  display: inline-block;
+}
+#visual nav i.on {
+  color: #222;
+  transform: scale(2);
+}
+#visual .btns {
+  position: absolute;
+  left: 10vw;
+  bottom: 10vh;
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+#visual .btns li {
+  width: 70px;
+  height: 5px;
+  background-color: #fff;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#visual .btns li.on {
+  width: 150px;
+  background-color: #222;
+}
+#visual .bar {
+  width: 0%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+}
+
+.txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 1;
+}
+.txt h2 {
+  display: inline-block;
+  font: bold 50px "Great Vibes";
+  color: black;
+  opacity: 1;
+}
+.txt p {
+  font: normal 22px "Dancing Script";
+}
+
+.wrap {
+  width: 100%;
+  background-color: #eee;
+  position: relative;
+}
+.wrap .content_all {
+  width: 100%;
+  padding-top: 80px;
+}
+.wrap .content_all .back .backAll {
+  width: 100%;
+  height: 66.6666666667vh;
+  text-align: center;
+}
+.wrap .content_all .back .backAll article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 50px;
+  justify-content: space-evenly;
+  transition: 1s;
+}
+.wrap .content_all .back .backAll article .pic {
+  width: 40%;
+  height: 100%;
+}
+.wrap .content_all .back .backAll article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrap .content_all .back .back1 article.art1, .wrap .content_all .back .back1 article.art3 {
+  text-align: right;
+  justify-content: space-evenly;
+  background-color: rgba(193, 239, 255, 0.4);
+  transform: translateX(-100%);
+  opacity: 1;
+}
+.wrap .content_all .back .back1.on article {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.wrap .content_all .back .back2 article.art2,
+.wrap .content_all .back .back2 article.art4 {
+  text-align: left;
+  justify-content: space-evenly;
+  background-color: rgba(255, 219, 164, 0.4);
+  transform: translateX(200%);
+  opacity: 0;
+}
+.wrap .content_all .back .back2.on article {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.wrap .content_all .front {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.wrap .content_all .front .inner {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  position: relative;
+  background-color: rgba(252, 201, 193, 0.7);
+}
+.wrap .content_all .front .inner .pic {
+  width: 50%;
+  height: 50%;
+  transform: scale(1);
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  transition: 1s;
+}
+.wrap .content_all .front .inner .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrap .content_all .front .inner.on .pic {
+  top: 30%;
+  transform: scale(1.5);
+}
+.wrap .content_all .front .inner.off .pic {
+  top: -100%;
+  transform: scale(0);
+}
+
+/*# sourceMappingURL=style.css.map */
